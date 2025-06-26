@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BICHOS DE PATAS - Cuidando do seu pet com amor</title>
+    <link rel="icon" type="image/png" href="-wKQ3YiYckO2E2JQ9o6Pt">
+    <link rel="shortcut icon" type="image/png" href="-wKQ3YiYckO2E2JQ9o6Pt">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #e91e63 0%, #ff9800 100%); }
+        .gradient-text { background: linear-gradient(135deg, #e91e63, #ff9800); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Animação da imagem hero */
+        .hero-image {
+            animation: float 3s ease-in-out infinite;
+            transform: rotate(-3deg);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: rotate(-3deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(-3deg) translateY(-10px);
+            }
+        }
+
+        /* Animações de entrada para seções */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease-out;
+        }
+
+        .scale-in.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Animação de hover nos cards */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Animação de pulso para elementos importantes */
+        .pulse-gentle {
+            animation: pulseGentle 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGentle {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Animação de rotação suave */
+        .rotate-slow {
+            animation: rotateSlow 10s linear infinite;
+        }
+
+        @keyframes rotateSlow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Animação de fade-in com delay */
+        .fade-delay-1 { animation-delay: 0.1s; }
+        .fade-delay-2 { animation-delay: 0.2s; }
+        .fade-delay-3 { animation-delay: 0.3s; }
+        .fade-delay-4 { animation-delay: 0.4s; }
+        .fade-delay-5 { animation-delay: 0.5s; }
+        .fade-delay-6 { animation-delay: 0.6s; }
+
+        /* Animação para background gradient */
+        .gradient-animated {
+            background: linear-gradient(-45deg, #e91e63, #ff9800, #e91e63, #ff9800);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="MhSFElGqtc9q6rxPgidDD" alt="BICHOS DE PATAS Logo" class="h-12 w-12">
+                    <div>
+                        <h1 class="text-2xl font-bold gradient-text">BICHOS DE PATAS</h1>
+                        <p class="text-sm text-gray-600">Cuidando com amor</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#inicio" class="text-gray-700 hover:text-pink-500 font-medium transition">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-pink-500 font-medium transition">Sobre Nós</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-pink-500 font-medium transition">Serviços</a>
+                    <a href="#depoimentos" class="text-gray-700 hover:text-pink-500 font-medium transition">Depoimentos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-pink-500 font-medium transition">Contato</a>
+                    <a href="https://wa.me/5582996631166" target="_blank" class="bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 py-2 rounded-full font-medium hover:opacity-90 transition">
+                        <i class="fab fa-whatsapp mr-1"></i>WhatsApp
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center space-x-3">
+                    <a href="https://wa.me/5582996631166" target="_blank" class="bg-gradient-to-r from-pink-500 to-orange-500 text-white p-2 rounded-full hover:opacity-90 transition">
+                        <i class="fab fa-whatsapp text-sm"></i>
+                    </a>
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 py-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#inicio" class="text-gray-700 hover:text-pink-500 font-medium transition px-6 py-2">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-pink-500 font-medium transition px-6 py-2">Sobre Nós</a>
+                    <a href="#servicos" class="text-gray-700 hover:text-pink-500 font-medium transition px-6 py-2">Serviços</a>
+                    <a href="#depoimentos" class="text-gray-700 hover:text-pink-500 font-medium transition px-6 py-2">Depoimentos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-pink-500 font-medium transition px-6 py-2">Contato</a>
+                    <div class="px-6 pt-2">
+                        <a href="https://wa.me/5582996631166" target="_blank" class="block text-center bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 py-3 rounded-full font-medium hover:opacity-90 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>Chamar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-animated pt-24 pb-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white fade-in-left">
+                    <h2 class="text-5xl font-bold mb-6">Bem-vindo ao<br><span class="text-yellow-300">BICHOS DE PATAS!</span></h2>
+                    <p class="text-xl mb-8 opacity-90">O petshop onde cada latido, miado, e rabinho abanando encontra cuidado e diversão. Seu animal de estimação merece o melhor!</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/5582996631166?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20para%20meu%20pet%20no%20BICHOS%20DE%20PATAS." target="_blank" class="bg-white text-pink-600 px-8 py-3 rounded-full font-semibold hover:bg-yellow-50 transition inline-block pulse-gentle">
+                            <i class="fas fa-calendar-alt mr-2"></i>Agendar Serviço
+                        </a>
+                        <a href="#sobre" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-pink-600 transition inline-block">
+                            <i class="fas fa-play mr-2"></i>Conheça nossa história
+                        </a>
+                    </div>
+                </div>
+                <div class="relative fade-in-right">
+                    <img src="YMqDEjagjKSPCOimGUuDk" alt="Cães e gatos adoráveis brincando felizes no jardim" class="rounded-2xl shadow-2xl hero-image">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg pulse-gentle">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-green-100 p-2 rounded-full">
+                                <i class="fas fa-heart text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">+500</p>
+                                <p class="text-sm text-gray-600">Pets Felizes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-up">
+                <h3 class="text-4xl font-bold mb-6">Aqui, seu pet encontra tudo<br>o que ama. <span class="gradient-text">E você também.</span></h3>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">No BICHOS DE PATAS, cada latido, miado, e rabinho abanando é tratado com carinho e dedicação. Nossa equipe apaixonada por animais oferece cuidados completos para o bem-estar do seu companheiro de quatro patas.</p>
+            </div>
+            
+            <!-- Nossa História -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="relative fade-in-left">
+                    <!-- Imagem principal -->
+                    <div class="relative z-10 bg-gray-50 rounded-2xl shadow-lg p-4 hover-lift">
+                        <img src="zA2ncNZBaW_tPWHp7mkSI" alt="Equipe BICHOS DE PATAS - Veterinárias com pets" class="rounded-xl w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="fade-in-right">
+                    <h4 class="text-3xl font-bold mb-6 gradient-text">Nossa História</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Fundado com o sonho de criar um espaço onde cada animal fosse tratado como parte da família, o BICHOS DE PATAS nasceu do amor incondicional pelos nossos companheiros de quatro patas.</p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Com mais de uma década de dedicação, construímos uma clínica veterinária que combina tecnologia de ponta com o carinho artesanal que todo pet merece.</p>
+                    <div class="flex items-center space-x-6">
+                        <div class="text-center scale-in fade-delay-1">
+                            <div class="text-3xl font-bold gradient-text">10+</div>
+                            <div class="text-sm text-gray-600">Anos de experiência</div>
+                        </div>
+                        <div class="text-center scale-in fade-delay-2">
+                            <div class="text-3xl font-bold gradient-text">500+</div>
+                            <div class="text-sm text-gray-600">Pets felizes</div>
+                        </div>
+                        <div class="text-center scale-in fade-delay-3">
+                            <div class="text-3xl font-bold gradient-text">2</div>
+                            <div class="text-sm text-gray-600">Unidades</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nossos Valores -->
+            <div class="bg-gradient-to-r from-pink-50 to-orange-50 rounded-3xl p-8 md:p-12 fade-in-up">
+                <div class="text-center mb-12">
+                    <h4 class="text-3xl font-bold mb-4">Nossos <span class="gradient-text">Valores</span></h4>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Princípios que guiam cada decisão e cuidado que oferecemos</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center scale-in fade-delay-1">
+                        <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover-lift">
+                            <i class="fas fa-heart text-pink-500 text-2xl"></i>
+                        </div>
+                        <h5 class="text-xl font-semibold mb-4">Amor e Carinho</h5>
+                        <p class="text-gray-600">Cada pet é tratado com amor incondicional, como se fosse nosso próprio companheiro.</p>
+                    </div>
+                    
+                    <div class="text-center scale-in fade-delay-2">
+                        <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover-lift">
+                            <i class="fas fa-award text-orange-500 text-2xl"></i>
+                        </div>
+                        <h5 class="text-xl font-semibold mb-4">Excelência</h5>
+                        <p class="text-gray-600">Buscamos sempre a mais alta qualidade em nossos serviços e atendimento.</p>
+                    </div>
+                    
+                    <div class="text-center scale-in fade-delay-3">
+                        <div class="bg-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg hover-lift">
+                            <i class="fas fa-shield-alt text-purple-500 text-2xl"></i>
+                        </div>
+                        <h5 class="text-xl font-semibold mb-4">Confiança</h5>
+                        <p class="text-gray-600">Construímos relacionamentos duradouros baseados na transparência e confiança.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nossa Equipe -->
+            <div class="mt-16 text-center fade-in-up">
+                <h4 class="text-3xl font-bold mb-6">Nossa <span class="gradient-text">Equipe Especializada</span></h4>
+                <p class="text-gray-600 max-w-3xl mx-auto mb-12">Profissionais apaixonados e qualificados, sempre prontos para cuidar do seu melhor amigo</p>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition hover-lift scale-in fade-delay-1">
+                        <div class="bg-gradient-to-br from-pink-500 to-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 pulse-gentle">
+                            <i class="fas fa-user-md text-white text-xl"></i>
+                        </div>
+                        <h6 class="font-semibold text-lg mb-2">Veterinários</h6>
+                        <p class="text-gray-600 text-sm">Especialistas em diversas áreas da medicina veterinária</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition hover-lift scale-in fade-delay-2">
+                        <div class="bg-gradient-to-br from-blue-500 to-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 pulse-gentle">
+                            <i class="fas fa-hands-helping text-white text-xl"></i>
+                        </div>
+                        <h6 class="font-semibold text-lg mb-2">Auxiliares</h6>
+                        <p class="text-gray-600 text-sm">Cuidadores dedicados ao bem-estar dos pets</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition hover-lift scale-in fade-delay-3">
+                        <div class="bg-gradient-to-br from-green-500 to-teal-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 pulse-gentle">
+                            <i class="fas fa-cut text-white text-xl"></i>
+                        </div>
+                        <h6 class="font-semibold text-lg mb-2">Tosadores</h6>
+                        <p class="text-gray-600 text-sm">Profissionais especializados em estética pet</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition hover-lift scale-in fade-delay-4">
+                        <div class="bg-gradient-to-br from-yellow-500 to-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 pulse-gentle">
+                            <i class="fas fa-headset text-white text-xl"></i>
+                        </div>
+                        <h6 class="font-semibold text-lg mb-2">Atendimento</h6>
+                        <p class="text-gray-600 text-sm">Equipe pronta para receber você e seu pet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Detalhados -->
+    <section id="servicos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 fade-in-up">
+                <h3 class="text-4xl font-bold mb-4">Serviços pensados<br>com <span class="gradient-text">carinho em cada detalhe</span></h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-1">
+                    <div class="mb-4">
+                        <i class="fas fa-clock text-3xl mb-3 rotate-slow"></i>
+                        <h4 class="text-xl font-semibold">Clínica Veterinária 24h</h4>
+                    </div>
+                    <p class="text-orange-100 mb-4">Atendimento veterinário disponível 24 horas por dia.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-500 to-red-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-2">
+                    <div class="mb-4">
+                        <i class="fas fa-ambulance text-3xl mb-3 pulse-gentle"></i>
+                        <h4 class="text-xl font-semibold">Urgência e Emergência</h4>
+                    </div>
+                    <p class="text-red-100 mb-4">Atendimento emergencial rápido e especializado.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-pink-500 to-pink-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-3">
+                    <div class="mb-4">
+                        <i class="fas fa-cut text-3xl mb-3"></i>
+                        <h4 class="text-xl font-semibold">Pet Shop • Banho & Tosa</h4>
+                    </div>
+                    <p class="text-pink-100 mb-4">Loja completa com serviços de beleza e higiene.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-4">
+                    <div class="mb-4">
+                        <i class="fas fa-pills text-3xl mb-3"></i>
+                        <h4 class="text-xl font-semibold">Farmácia</h4>
+                    </div>
+                    <p class="text-blue-100 mb-4">Medicamentos e produtos veterinários de qualidade.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-5">
+                    <div class="mb-4">
+                        <i class="fas fa-user-md text-3xl mb-3"></i>
+                        <h4 class="text-xl font-semibold">Cirurgias</h4>
+                    </div>
+                    <p class="text-green-100 mb-4">Procedimentos cirúrgicos com tecnologia avançada.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-6">
+                    <div class="mb-4">
+                        <i class="fas fa-bed text-3xl mb-3"></i>
+                        <h4 class="text-xl font-semibold">Internamento</h4>
+                    </div>
+                    <p class="text-purple-100 mb-4">Cuidados intensivos e acompanhamento 24h.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-1">
+                    <div class="mb-4">
+                        <i class="fas fa-stethoscope text-3xl mb-3"></i>
+                        <h4 class="text-xl font-semibold">Especialidades Médicas</h4>
+                    </div>
+                    <p class="text-indigo-100 mb-4">Atendimento com várias especialidades veterinárias.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 text-white p-6 rounded-2xl hover-lift scale-in fade-delay-2">
+                    <div class="mb-4">
+                        <i class="fas fa-bone text-3xl mb-3"></i>
+                        <h4 class="text-xl font-semibold">Pet Shop Completo</h4>
+                    </div>
+                    <p class="text-yellow-100 mb-4">Tudo que seu pet precisa em um só lugar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 fade-in-up">
+                <h3 class="text-4xl font-bold mb-4">Olha o que os<br>tutores <span class="gradient-text">estão dizendo por aí!</span></h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-2xl hover-lift scale-in fade-delay-1">
+                    <div class="flex items-center mb-4">
+                        <img src="keys/client1?prompt=Happy%20woman%20with%20small%20dog%20smiling%20portrait" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h5 class="font-semibold">Maria Silva</h5>
+                            <p class="text-gray-600 text-sm">Tutora da Bella</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"A Bella ama vir aqui! O atendimento é excepcional e sempre sai linda da tosa. Recomendo de olhos fechados!"</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-2xl hover-lift scale-in fade-delay-2">
+                    <div class="flex items-center mb-4">
+                        <img src="keys/client2?prompt=Smiling%20man%20holding%20cat%20portrait" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h5 class="font-semibold">João Santos</h5>
+                            <p class="text-gray-600 text-sm">Tutor do Milo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"O Milo ficou no hotel durante minhas férias e foi muito bem cuidado. Equipe super carinhosa e profissional!"</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-2xl hover-lift scale-in fade-delay-3">
+                    <div class="flex items-center mb-4">
+                        <img src="keys/client3?prompt=Happy%20elderly%20woman%20with%20golden%20retriever%20portrait" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h5 class="font-semibold">Ana Costa</h5>
+                            <p class="text-gray-600 text-sm">Tutora do Thor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Encontrei tudo que precisava para o Thor em um só lugar. Produtos de qualidade e equipe que realmente entende de pets!"</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 fade-in-up">
+                <h3 class="text-4xl font-bold mb-4">Vamos dar uma<br><span class="gradient-text">voltinha até o BICHOS DE PATAS?</span></h3>
+                <p class="text-xl text-gray-600">Estamos te esperando com um mimo especial e muito carinho!</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                <!-- Unidade 1 -->
+                <div class="scale-in fade-delay-1">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                        <h4 class="text-xl font-bold mb-4 gradient-text">📌 Unidade 1 – Ouro Preto</h4>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-start space-x-2">
+                                <div class="bg-pink-100 p-2 rounded-full">
+                                    <i class="fas fa-map-marker-alt text-pink-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 text-sm">R. Dom Jonas Batinga, 566</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-green-100 p-2 rounded-full">
+                                    <i class="fab fa-whatsapp text-green-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 text-sm">(82) 99663-1166</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <img src="DEHE8PezBXTTSb-IJiBvg" alt="BICHOS DE PATAS - Unidade Ouro Preto" class="w-full h-40 object-cover rounded-lg">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <a href="https://maps.google.com/?q=R.+Dom+Jonas+Batinga,+566,+Arapiraca" target="_blank" class="block w-full bg-blue-500 text-white py-3 rounded-full font-semibold hover:bg-blue-600 transition text-center text-sm">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Ver no Mapa
+                            </a>
+                        </div>
+                        
+                        <a href="https://wa.me/5582996631166" target="_blank" class="block w-full gradient-bg text-white py-3 rounded-full font-semibold hover:opacity-90 transition text-center text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Unidade 2 -->
+                <div class="scale-in fade-delay-2">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg hover-lift">
+                        <h4 class="text-xl font-bold mb-4 gradient-text">📌 Unidade 2 – Baixa Grande</h4>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-start space-x-2">
+                                <div class="bg-pink-100 p-2 rounded-full">
+                                    <i class="fas fa-map-marker-alt text-pink-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 text-sm">R. Expedicionário Brasileiro, 2524</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-green-100 p-2 rounded-full">
+                                    <i class="fab fa-whatsapp text-green-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 text-sm">(82) 98865-0800</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4 bg-gray-50 rounded-lg flex items-center justify-center h-40">
+                            <img src="_PDhHk5e15ZcGbDn5z4oc" alt="BICHOS DE PATAS - Unidade Baixa Grande" class="max-w-full max-h-full object-contain rounded-lg">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <a href="https://maps.google.com/?q=R.+Expedicionário+Brasileiro,+2524,+Arapiraca" target="_blank" class="block w-full bg-blue-500 text-white py-3 rounded-full font-semibold hover:bg-blue-600 transition text-center text-sm">
+                                <i class="fas fa-map-marker-alt mr-2"></i>Ver no Mapa
+                            </a>
+                        </div>
+                        
+                        <a href="https://wa.me/5582988650800" target="_blank" class="block w-full gradient-bg text-white py-3 rounded-full font-semibold hover:opacity-90 transition text-center text-sm">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Informações Gerais -->
+                <div class="lg:col-span-1 md:col-span-2 scale-in fade-delay-3">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg h-full flex flex-col justify-center hover-lift">
+                        <div class="text-center">
+                            <div class="bg-gradient-to-br from-pink-500 to-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clock text-white text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-4 gradient-text">Atendimento 24H</h4>
+                            <p class="text-gray-600 mb-4">Clínica Veterinária disponível 24 horas para emergências</p>
+                            <p class="text-sm text-gray-500 mb-4">📍 Arapiraca – AL</p>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 ml-2">+500 pets felizes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="gradient-animated py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold text-white mb-6 fade-in-up">Solicite seu orçamento</h3>
+            <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto fade-in-up">Estamos te esperando com um mimo especial para seu pet!</p>
+            <a href="https://wa.me/5582996631166?text=Olá!%20Quero%20agendar%20um%20atendimento%20para%20meu%20pet%20no%20BICHOS%20DE%20PATAS.%20Vocês%20têm%20disponibilidade?" target="_blank" class="bg-white text-pink-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-yellow-50 transition shadow-lg inline-block pulse-gentle scale-in">
+                <i class="fas fa-calendar-alt mr-2"></i>Agendar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="MhSFElGqtc9q6rxPgidDD" alt="BICHOS DE PATAS Logo" class="h-10 w-10">
+                        <div>
+                            <h5 class="text-xl font-bold">BICHOS DE PATAS</h5>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">Onde seu pet é mais que cliente, é parte da família.</p>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Navegue</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#inicio" class="hover:text-white transition">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition">Serviços</a></li>
+                        <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Serviços</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Clínica Veterinária 24h</li>
+                        <li>Urgência e Emergência</li>
+                        <li>Banho & Tosa</li>
+                        <li>Cirurgias e Internamento</li>
+                        <li>Farmácia Veterinária</li>
+                        <li>Especialidades Médicas</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Contato</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Unidade 1: R. Dom Jonas Batinga, 566</li>
+                        <li><i class="fab fa-whatsapp mr-2"></i>(82) 99663-1166</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Unidade 2: R. Expedicionário Brasileiro, 2524</li>
+                        <li><i class="fab fa-whatsapp mr-2"></i>(82) 98865-0800</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 BICHOS DE PATAS. Desenvolvido com ❤️ por Thiago Fernandes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Menu Mobile Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight da navegação conforme scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-pink-500');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-pink-500');
+                }
+            });
+        });
+
+        // Animações de scroll - Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os elementos com classes de animação
+        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Inicializar animações do Hero imediatamente
+        setTimeout(() => {
+            document.querySelectorAll('#inicio .fade-in-left, #inicio .fade-in-right').forEach(el => {
+                el.classList.add('animate');
+            });
+        }, 300);
+    </script>
+</body>
+</html>
